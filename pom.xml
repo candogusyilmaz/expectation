@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.canverse.expectation</groupId>
+    <artifactId>expectation</artifactId>
+    <version>0.0.1</version>
+    <description>Expectation is a versatile Java validation library designed to simplify and enhance the validation
+        process in your projects. With Expectation, validating objects becomes an intuitive and expressive experience,
+        allowing you to create clear and concise validation rules.
+    </description>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <licenses>
+        <!-- Specify the license under which your library is distributed -->
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/candogusyilmaz/expectation</url>
+        <connection>scm:git:https://github.com/candogusyilmaz/expectation.git</connection>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>candogusyilmaz</id>
+            <name>Candoğuş YILMAZ</name>
+            <email>me@canverse.dev</email>
+        </developer>
+    </developers>
+</project>
