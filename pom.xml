@@ -11,6 +11,7 @@
         process in your projects. With Expectation, validating objects becomes an intuitive and expressive experience,
         allowing you to create clear and concise validation rules.
     </description>
+    <url>https://canverse.dev</url>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
