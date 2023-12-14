@@ -1,9 +1,14 @@
 package dev.canverse.expectation;
 
 import java.time.chrono.ChronoLocalDateTime;
+import java.util.Optional;
 
 public final class Expect {
     private Expect() {
+    }
+
+    public static <T> ObjectConstraint<T> of(T obj) {
+        return new ObjectConstraint<>(obj);
     }
 
     public static StringConstraint of(String obj) {
@@ -20,5 +25,9 @@ public final class Expect {
 
     public static <T extends ChronoLocalDateTime<?>> ChronoLocalDateTimeConstraint<T> of(T obj) {
         return new ChronoLocalDateTimeConstraint<>(obj);
+    }
+
+    public static <T> OptionalConstraint<T> of(Optional<T> obj) {
+        return new OptionalConstraint<>(obj);
     }
 }

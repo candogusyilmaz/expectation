@@ -23,7 +23,7 @@ public final class NumberConstraint<T extends Number & Comparable<T>> extends Co
     }
 
     public NumberConstraint<T> greaterThan(T value) {
-        validateGreaterThan(value, "The value %s must be greater than %s.", obj, value);
+        validateGreaterThan(value, "The value %s must be greater than %s.", value, value);
         return this;
     }
 
@@ -33,7 +33,7 @@ public final class NumberConstraint<T extends Number & Comparable<T>> extends Co
     }
 
     public NumberConstraint<T> greaterThanOrEq(T value) {
-        validateGreaterThanOrEq(value, "The value %s must be greater than or equal to %s.", obj, value);
+        validateGreaterThanOrEq(value, "The value %s must be greater than or equal to %s.", value, value);
         return this;
     }
 
@@ -43,7 +43,7 @@ public final class NumberConstraint<T extends Number & Comparable<T>> extends Co
     }
 
     public NumberConstraint<T> lessThan(T value) {
-        validateLessThan(value, "The value %s must be less than %s.", obj, value);
+        validateLessThan(value, "The value %s must be less than %s.", value, value);
         return this;
     }
 
@@ -53,7 +53,7 @@ public final class NumberConstraint<T extends Number & Comparable<T>> extends Co
     }
 
     public NumberConstraint<T> lessThanOrEqualTo(T value) {
-        validateLessThanOrEq(value, "The value %s must be less than or equal to %s.", obj, value);
+        validateLessThanOrEq(value, "The value %s must be less than or equal to %s.", value, value);
         return this;
     }
 
@@ -144,19 +144,19 @@ public final class NumberConstraint<T extends Number & Comparable<T>> extends Co
 
     private void validateNegative(String message, Object... args) {
         if (obj.compareTo((T) obj.getClass().cast(0)) >= 0) {
-            throw new ExpectationFailedException("The value %s must be negative.", obj);
+            throw new ExpectationFailedException(message, obj);
         }
     }
 
     private void validatePositive(String message, Object... args) {
         if (obj.compareTo((T) obj.getClass().cast(0)) <= 0) {
-            throw new ExpectationFailedException("The value %s must be positive.", obj);
+            throw new ExpectationFailedException(message, obj);
         }
     }
 
     private void validateZero(String message, Object... args) {
         if (obj.compareTo((T) obj.getClass().cast(0)) != 0) {
-            throw new ExpectationFailedException("The value %s must be zero.", obj);
+            throw new ExpectationFailedException(message, obj);
         }
     }
 }
