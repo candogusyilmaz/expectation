@@ -12,7 +12,7 @@ public class ChronoLocalDateTimeConstraint<T extends ChronoLocalDateTime<?>> ext
     }
 
     public ChronoLocalDateTimeConstraint<T> after(T value) {
-        validateAfter(value, "The value %s must be after %s.", value, value);
+        validateAfter(value, "The value %s must be after %s.", obj, value);
         return this;
     }
 
@@ -22,7 +22,7 @@ public class ChronoLocalDateTimeConstraint<T extends ChronoLocalDateTime<?>> ext
     }
 
     public ChronoLocalDateTimeConstraint<T> before(T value) {
-        validateBefore(value, "The value %s must be before %s.", value, value);
+        validateBefore(value, "The value %s must be before %s.", obj, value);
         return this;
     }
 

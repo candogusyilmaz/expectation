@@ -115,6 +115,22 @@ public abstract class Constraint<T, C extends Constraint<T, C>> {
         return (C) this;
     }
 
+    public C is(T value) {
+        if (!obj.equals(value)) {
+            throw new ExpectationFailedException("The value must be %s.", value);
+        }
+
+        return (C) this;
+    }
+
+    public C is(T value, String message, Object... args) {
+        if (!obj.equals(value)) {
+            throw new ExpectationFailedException("The value must not be %s.", value);
+        }
+
+        return (C) this;
+    }
+
     /**
      * Throws an ExpectationFailedException if the constrained object is not null.
      *
@@ -140,6 +156,22 @@ public abstract class Constraint<T, C extends Constraint<T, C>> {
     public C isNull(String message, Object... args) {
         if (obj != null) {
             throw new ExpectationFailedException(message, args);
+        }
+
+        return (C) this;
+    }
+
+    public C not(T value) {
+        if (obj.equals(value)) {
+            throw new ExpectationFailedException("The value must not be %s.", value);
+        }
+
+        return (C) this;
+    }
+
+    public C not(T value, String message, Object... args) {
+        if (obj.equals(value)) {
+            throw new ExpectationFailedException("The value must not be %s.", value);
         }
 
         return (C) this;

@@ -34,4 +34,18 @@ class ConstraintTests {
         assertEquals(b, Expect.of(b).get(s -> s));
         assertEquals("", Expect.of("").get(s -> s));
     }
+
+    @Test
+    void not() {
+        assertThrows(ExpectationFailedException.class, () -> Expect.of(1).not(1));
+        assertDoesNotThrow(() -> Expect.of(1).not(2));
+    }
+
+    @Test
+    void is() {
+        assertDoesNotThrow(() -> Expect.of(1).is(1));
+        assertDoesNotThrow(() -> Expect.of(true).is(true));
+        assertThrows(ExpectationFailedException.class, () -> Expect.of(1).is(2));
+        assertThrows(ExpectationFailedException.class, () -> Expect.of(true).is(false));
+    }
 }
