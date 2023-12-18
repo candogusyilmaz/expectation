@@ -6,7 +6,7 @@
 
     <groupId>dev.canverse</groupId>
     <artifactId>expectation</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Expectation is a versatile Java validation library designed to simplify and enhance the validation
         process in your projects. With Expectation, validating objects becomes an intuitive and expressive experience,
