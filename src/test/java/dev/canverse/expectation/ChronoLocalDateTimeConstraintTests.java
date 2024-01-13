@@ -66,14 +66,14 @@ class ChronoLocalDateTimeConstraintTests {
 
     @Test
     void leapYear() {
-        assertThrows(ExpectationFailedException.class, () -> Expect.of(now).leapYear());
+        assertThrows(ExpectationFailedException.class, () -> Expect.of(now.withYear(2023)).leapYear());
         assertDoesNotThrow(() -> Expect.of(now.withYear(2020)).leapYear());
     }
 
     @Test
     void notLeapYear() {
         assertThrows(ExpectationFailedException.class, () -> Expect.of(now.withYear(2020)).notLeapYear());
-        assertDoesNotThrow(() -> Expect.of(now).notLeapYear());
+        assertDoesNotThrow(() -> Expect.of(now.withYear(2023)).notLeapYear());
     }
 
     @Test
