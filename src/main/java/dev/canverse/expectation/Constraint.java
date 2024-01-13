@@ -125,7 +125,7 @@ public abstract class Constraint<T, C extends Constraint<T, C>> {
 
     public C is(T value, String message, Object... args) {
         if (!obj.equals(value)) {
-            throw new ExpectationFailedException("The value must not be %s.", value);
+            throw new ExpectationFailedException(message, args);
         }
 
         return (C) this;
@@ -171,7 +171,7 @@ public abstract class Constraint<T, C extends Constraint<T, C>> {
 
     public C not(T value, String message, Object... args) {
         if (obj.equals(value)) {
-            throw new ExpectationFailedException("The value must not be %s.", value);
+            throw new ExpectationFailedException(message, args);
         }
 
         return (C) this;

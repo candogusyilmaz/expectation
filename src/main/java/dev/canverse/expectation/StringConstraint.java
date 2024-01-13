@@ -187,12 +187,12 @@ public final class StringConstraint extends Constraint<String, StringConstraint>
     }
 
     public StringConstraint notNullOrEmpty() {
-        validateNotNullOrEmpty(obj, "The value must not be null or empty.");
+        validateNotNullOrEmpty("The value must not be null or empty.");
         return this;
     }
 
     public StringConstraint notNullOrEmpty(String message, Object... args) {
-        validateNotNullOrEmpty(obj, message, args);
+        validateNotNullOrEmpty(message, args);
         return this;
     }
 
@@ -314,9 +314,9 @@ public final class StringConstraint extends Constraint<String, StringConstraint>
         }
     }
 
-    private void validateNotNullOrEmpty(String value, String message, Object... args) {
+    private void validateNotNullOrEmpty(String message, Object... args) {
         if (obj == null || obj.isEmpty()) {
-            throw new ExpectationFailedException("The value must not be null or empty.");
+            throw new ExpectationFailedException(message, args);
         }
     }
 

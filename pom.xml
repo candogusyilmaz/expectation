@@ -6,7 +6,7 @@
 
     <groupId>dev.canverse</groupId>
     <artifactId>expectation</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.6</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Expectation is a versatile Java validation library designed to simplify and enhance the validation
         process in your projects. With Expectation, validating objects becomes an intuitive and expressive experience,
@@ -21,7 +21,6 @@
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -107,7 +106,6 @@
 
 
     <licenses>
-        <!-- Specify the license under which your library is distributed -->
         <license>
             <name>Apache License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0</url>
