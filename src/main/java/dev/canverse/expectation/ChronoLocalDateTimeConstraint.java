@@ -117,13 +117,13 @@ public class ChronoLocalDateTimeConstraint<T extends ChronoLocalDateTime<?>> ext
     }
 
     private void validateAfter(T value, String message, Object... args) {
-        if (obj.isAfter(value)) {
+        if (!obj.isAfter(value)) {
             throw new ExpectationFailedException(message, args);
         }
     }
 
     private void validateBefore(T value, String message, Object... args) {
-        if (obj.isBefore(value)) {
+        if (!obj.isBefore(value)) {
             throw new ExpectationFailedException(message, args);
         }
     }

@@ -16,14 +16,14 @@ class ChronoLocalDateTimeConstraintTests {
 
     @Test
     void before() {
-        assertThrows(ExpectationFailedException.class, () -> Expect.of(now).before(future));
-        assertDoesNotThrow(() -> Expect.of(now).before(past));
+        assertDoesNotThrow(() -> Expect.of(now).before(future));
+        assertThrows(ExpectationFailedException.class, () -> Expect.of(now).before(past));
     }
 
     @Test
     void after() {
-        assertThrows(ExpectationFailedException.class, () -> Expect.of(now).after(past));
-        assertDoesNotThrow(() -> Expect.of(now).after(future));
+        assertThrows(ExpectationFailedException.class, () -> Expect.of(now).after(future));
+        assertDoesNotThrow(() -> Expect.of(now).after(past));
     }
 
     @Test
